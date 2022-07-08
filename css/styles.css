@@ -5,12 +5,14 @@
     --text-color-secondary: #ffffff;
     --text-address-color: rgba(255,255,255,.6);
     --logo-color: #000000;
+    --closing-button-color: #000000;
 
     --accent-color: #2196f3;
     --accent-color-hover: #188ce8;
     --accent-color-overlay: rgba(33, 150, 243, .9);
 
     --background-header: #ffffff;
+    --background-modal: #ffffff;
     --background-hero: #c4c4c4;
     --background-footer: #2f303a;
     --background-team-section: #f5f4fa;
@@ -21,6 +23,7 @@
     --icon-color-primary: #afb1b8;
     --background-footer-icon: rgba(255,255,255,.1);
     --cases-overlay: rgba(47, 48, 58, 0.8);
+    --background-overlay-modal: rgba(0, 0, 0, .2);
 
     --margin-card: 30px;
 
@@ -603,4 +606,50 @@ footer {
 .socials-background {
     background-color: var(--background-footer-icon);
     border-radius: 50%;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--background-overlay-modal);
+
+    opacity: 1;
+    transition: opacity 250ms var(--transition-timing-function);
+}
+
+.modal-backdrop.is-hidden{
+    opacity: 0;
+    
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 530px;
+    height: 580px;
+    background-color: var(--background-modal);
+    border-radius: 4px;
+  
+}
+
+.modal-closing-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    height: 30px;
+    width: 30px;
+    border: 1px solid var(--background-overlay-modal);
+    border-radius: 50%;
+    padding: 5px;
+    background-color: var(--background-modal);
+}
+
+.closing-icon {
+    fill: var(--closing-button-color);
+
 }
