@@ -42,7 +42,7 @@
     <section class="hero">
         <div class="container">
         <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-        <button class="hero-button" type="button">Заказать услугу</button>
+        <button class="hero-button" data-modal-open type="button">Заказать услугу</button>
         </div>
     </section>
     <!-- Наши преимущества -->
@@ -384,9 +384,9 @@
     </div>
 </footer>
 
-<div class="modal-backdrop is-hidden">
+<div class="modal-backdrop is-hidden" data-modal>
     <div class="modal">
-        <button type="button" class="modal-closing-button">
+        <button type="button" class="modal-closing-button" data-modal-close>
             <svg class="closing-icon" height="18px" width="18px" aria-label="Закрыть окно">
                 <use href="./images/icons.svg#icon-closing"></use>
             </svg>
@@ -394,6 +394,6 @@
     </div>
 </div>
 
-
+<script src="./js/modal.js"></script>
 </body>
 </html>
