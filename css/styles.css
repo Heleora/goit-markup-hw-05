@@ -23,6 +23,8 @@
     --cases-overlay: rgba(47, 48, 58, 0.8);
 
     --margin-card: 30px;
+
+    --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 
@@ -98,7 +100,10 @@ header {
     margin-right: 50px;}
 
 .nav-link {
-    color: var(--title-text-color);}
+    color: var(--title-text-color);
+
+    transition: color 250ms var(--transition-timing-function);
+}
 
 .nav-link:hover,
 .nav-link:focus,
@@ -127,31 +132,34 @@ header {
     width: 16px;
     margin-right: 10px;
     fill: currentColor;
+
+    transition: fill 250ms var(--transition-timing-function);
 }
 
 .phone-icon {
     margin-right: 10px;
     fill: currentColor;
     text-align: center;
+
+    transition: fill 250ms var(--transition-timing-function);
 }
 
 .contact {
-    display: flex;
-    align-items: center;
-    fill: var(--text-color-primery);}
+    color: var(--text-color-primery);
+
+    transition: color 250ms var(--transition-timing-function);
+}
 
 .contact:hover,
 .contact:focus {
     color: var(--accent-color);
 }
 .contact:hover .mailto-icon, 
-.contact:focus .mailto-icon {
-    fill: var(--accent-color);}
-
+.contact:focus .mailto-icon,
 .contact:hover .phone-icon,
 .contact:focus .phone-icon {
-    fill: var(--accent-color);
-}
+    fill: var(--accent-color);}
+ 
 
 .logo {
     color: var(--logo-color);
@@ -237,6 +245,8 @@ header {
     padding: 10px 32px;
     border: none;
     border-radius: 4px;
+
+    transition: background-color 250ms var(--transition-timing-function);
 }
 
 .hero-button:hover,
@@ -363,21 +373,26 @@ header {
     width: 44px;
     padding: 12px;
     fill: var(--text-color-secondary);
+    border-radius: 50%;
+
+    transition: background-color 250ms var(--transition-timing-function)
     }
 
 .socials-item-link:hover,
 .socials-item-link:focus {
     background-color: var(--accent-color);
-    border-radius: 50%;}
+    }
  
 
 .team-icon {
-    fill: var(--icon-color-primary);}
+    fill: var(--icon-color-primary);
+    transition: fill 250ms var(--transition-timing-function);
+}
 
-.socials-item-link:hover .team-icon {
-    fill: var(--text-color-secondary);}
+.socials-item-link:hover .team-icon,
 .socials-item-link:focus .team-icon {
     fill: var(--text-color-secondary);}
+ 
 
 
 /* CLIENTS */
@@ -394,19 +409,23 @@ header {
     width: 170px;
     border: 1px solid var(--icon-color-primary);
     border-radius: 4px;
-    padding: 16px 32px;}
+    padding: 16px 32px;
+
+    transition: border 250ms var(--transition-timing-function)
+}
 
 
 .clients-link:hover, .clients-link:focus {
     border: 1px solid var(--accent-color);}
 
 .clients-icon {
-    fill: var(--icon-color-primary);}
+    fill: var(--icon-color-primary);
+    transition: fill 250ms var(--transition-timing-function)
+}
 
 .clients-link:hover .clients-icon {
     fill: var(--accent-color);}
-.clients-link:focus .clients-icon {
-    fill: var(--accent-color);}
+
 
 /* PORTFOLIO */
 
@@ -431,7 +450,12 @@ header {
     
     padding: 6px 22px;
     border: none;
-    }
+
+    transition: color 250ms var(--transition-timing-function),  
+    background-color 250ms var(--transition-timing-function), 
+    border-radius 250ms var(--transition-timing-function), 
+    box-shadow 250ms var(--transition-timing-function)
+}
 
 .filter-button:hover, 
 .filter-button:focus {
@@ -451,7 +475,11 @@ header {
     background-color: var(--background-card);
     flex-basis: calc((100% - (2 * var(--margin-card))) / 3);
     margin-left: var(--margin-card);
-    margin-top: var(--margin-card);}
+    margin-top: var(--margin-card);
+
+    transition: border 250ms var(--transition-timing-function),
+    box-shadow 250ms var(--transition-timing-function);
+}
 
 .works-card-link:hover .works-card, 
 .works-card-link:focus .works-card {
@@ -460,33 +488,40 @@ header {
     0px 4px 4px rgba(0, 0, 0, 0.06),
      1px 4px 6px rgba(0, 0, 0, 0.16);}
 
-.works-card-overlay {
+.works-card-thumb {
     position: relative;
     width: 370px;
     height: 294px;
+
+    overflow: hidden;
 }
 
-.works-card .overlay-text {
+.works-card-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background-color: var(--accent-color-overlay);
+    padding: 63px 24px;
+    
+    transform: translateY(100%);
+    transition: transform 250ms var(--transition-timing-function);
 
+}
+
+.overlay-text {
     font-weight: inherit;
     font-size: 18px;
     line-height: 1.56;
     color: var(--text-color-secondary);
-    background-color: var(--accent-color-overlay);
-    padding: 63px 24px;
-
-    opacity: 0;
+    
 }
 
-.works-card-link:hover .overlay-text,
-.works-card-link:focus .overlay-text {
-    opacity: 1;
-}
+.works-card-link:hover .works-card-overlay,
+.works-card-link:focus .works-card-overlay {
+    transform: translateY(0);
+    }
 
 
 .card-description {
