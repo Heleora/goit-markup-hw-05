@@ -617,15 +617,15 @@ footer {
     background-color: var(--background-overlay-modal);
 
     opacity: 1;
-    pointer-events: none;
-    transition: opacity 250ms var(--transition-timing-function);
+    transition: opacity 250ms var(--transition-timing-function), 
+    visibility 250ms var(--transition-timing-function);
     }
 
-.modal-backdrop.is-hidden{
+.modal-backdrop.is-hidden {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-}
+    }
 
 .modal {
     position: absolute;
@@ -636,16 +636,14 @@ footer {
     background-color: var(--background-modal);
     border-radius: 4px;
 
-    pointer-events: auto;
-
     transform: translate(-50%, -50%) scale(1);
     transition: transform 250ms var(--transition-timing-function);
+    
   }
 
 .modal-backdrop.is-hidden .modal {
-    pointer-events: none;
     transform: translate(-50%, -50%) scale(.9);
-}
+    }
 
 .modal-closing-button {
     position: absolute;
